@@ -27,6 +27,8 @@ public class Smartphone {
         return Objects.hash(name, ram, storage, screensSize);
     }
 
+
+
     @Override
     public String toString() {
         return "Smartphone details \n" +

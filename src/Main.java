@@ -8,7 +8,7 @@ public class Main {
         /*
         PROGRAM 1 :Create a list of colours in the rainbow and do the following:
         - Print the last colour
-        - Change the 4th colour to purple and print all the colours
+        - Change the 4th colour to purple and print all the coloursß
          */
 
         List<String> colours = Arrays.asList( "red", "orange", "yellow", "green", "blue", "indigo", "violet");
@@ -50,11 +50,17 @@ public class Main {
         }
 
 
+
+
+
         for (Employee e : employees){
             System.out.printf("Name %s, current salary: %.2f, increment: %.2f \n",e.name,e.salary,calculateIncrement(e));
 
         }
 
+        System.out.println("........................................");
+
+        employees.forEach( e -> System.out.println(e.name));
 
         // using stream api ..........
 
@@ -118,3 +124,4 @@ public class Main {
         return increment*e.salary;
     }
 }
+
