@@ -1,3 +1,5 @@
+package into;
+
 import java.util.Objects;
 
 public class Smartphone {
@@ -31,7 +33,7 @@ public class Smartphone {
 
     @Override
     public String toString() {
-        return "Smartphone details \n" +
+        return "into.Smartphone details \n" +
                 "name='" + name + '\'' +
                 ", ram=" + ram +
                 ", storage='" + storage + '\'' +
