@@ -6,7 +6,6 @@ import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
 import java.util.stream.Collectors;
-import java.util.stream.Stream;
 
 public class Customer {
 
@@ -38,6 +37,10 @@ public class Customer {
     public void addAccount(Account acc) {
         this.acList.add(acc);
         this.noOfAccount++;
+    }
+
+    public void setcAddress(String cAddress) {
+        this.cAddress = cAddress;
     }
 
     public BigDecimal getTotalBalance(){

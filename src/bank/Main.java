@@ -56,6 +56,11 @@ public class Main {
         System.out.println(myBank.getBalance(3,1));     //balance after credit
 
 
+        //cli interface.
+        Cli.start(myBank);
+
+
+
 
     }
 
