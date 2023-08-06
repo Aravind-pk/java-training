@@ -1,4 +1,4 @@
-package into;//PROGRAM 3: Create a list of employees with the attributes - name, age, salary, yearsOfExp, department and rating (1 to 5)
+package trainingQuestions;//PROGRAM 3: Create a list of employees with the attributes - name, age, salary, yearsOfExp, department and rating (1 to 5)
 
 public class Employee {
     String name;

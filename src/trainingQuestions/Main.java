@@ -1,4 +1,4 @@
-package into;
+package trainingQuestions;
 
 import java.util.*;
 
