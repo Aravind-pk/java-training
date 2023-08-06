@@ -45,6 +45,17 @@ public class Main {
         ////printing number of customers with over 1000000 in any account;
         System.out.println(myBank.getCustomersWithOneOver(BigDecimal.valueOf(100000)).size());
 
+        //debit from a specific account
+        System.out.println(myBank.getBalance(3,1));     //balance before debit
+        myBank.debit(3,1, BigDecimal.valueOf(5000));
+        System.out.println(myBank.getBalance(3,1));     //balance after debit
+
+        //debit from a specific account
+        System.out.println(myBank.getBalance(3,1));     //balance before credit
+        myBank.credit(3,1, BigDecimal.valueOf(5000));
+        System.out.println(myBank.getBalance(3,1));     //balance after credit
+
+
 
     }
 

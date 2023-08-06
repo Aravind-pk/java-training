@@ -47,6 +47,11 @@ public class Bank {
         return  customerList.stream().filter(c-> c.cId==id).collect(Collectors.toList()).get(0);
     }
 
+    public BigDecimal getBalance(int cId, int accId){
+        return getCustomerById(cId).getAccountById(accId).getAccBalance();
+    }
+
+
     public void debit(int cId ,int accId, BigDecimal amt){
         getCustomerById(cId).getAccountById(accId).addDebit(amt);
     }
