@@ -37,7 +37,7 @@ public class Bank {
     }
 
     public List<Customer> getCustomersWithOneOver(BigDecimal bal) {
-        return  this.customerList.stream().filter(customer -> customer.getTopAccount().accBalance.compareTo(bal)> 0).collect(Collectors.toList());
+        return  this.customerList.stream().filter(customer -> customer.getTopAccount().getAccBalance().compareTo(bal)> 0).collect(Collectors.toList());
 
     }
 

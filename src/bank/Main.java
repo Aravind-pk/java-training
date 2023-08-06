@@ -23,7 +23,6 @@ Get all the customers with a bank balance of more than 1 million rupees in all o
 import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Random;
 import java.util.concurrent.ThreadLocalRandom;
 
 public class Main {
@@ -31,24 +30,26 @@ public class Main {
 
         Bank myBank = new Bank("myBank");
 
+        // random generating customers in bank
         myBank.addCustomer(generateCustomerList(50));
 
+        //printing no of customers
         System.out.println(myBank.noOfCustomers);
+
+        //printing customerlist
         System.out.println(myBank.getCustomerList());
+
+        //printing number of customers with a total over 1000000;
         System.out.println(myBank.getCustomersWithTotal(BigDecimal.valueOf(1000000)).size());
-        System.out.println(myBank.getCustomersWithOneOver(BigDecimal.valueOf(1000000)).size());
 
-
-
-
-
-
-
+        ////printing number of customers with over 1000000 in any account;
+        System.out.println(myBank.getCustomersWithOneOver(BigDecimal.valueOf(100000)).size());
 
 
     }
 
 
+    //random generation of account list
     public static List<Account> generateRandomAccountsList(int n){
         List<Account> accList = new ArrayList<>();
         String[] acTypeList = {"savings","current","Salary"};
@@ -62,6 +63,8 @@ public class Main {
         return accList;
     };
 
+
+    //random generation of customer list
     public static List<Customer> generateCustomerList(int n){
 
         List<Customer> customerList = new ArrayList<>();
@@ -72,7 +75,7 @@ public class Main {
             int id = i+1;
             String name = nameList[ThreadLocalRandom.current().nextInt(nameList.length)];
             String address = addressList[ThreadLocalRandom.current().nextInt(addressList.length)];
-            List<Account> accountList = generateRandomAccountsList(ThreadLocalRandom.current().nextInt(10));
+            List<Account> accountList = generateRandomAccountsList(ThreadLocalRandom.current().nextInt(2,10));
             customerList.add(new Customer(id,name,address,accountList));
         }
         return customerList;
