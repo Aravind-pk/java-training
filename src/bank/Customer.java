@@ -45,7 +45,7 @@ public class Customer {
     }
 
     public Account getTopAccount(){
-        return Collections.max(this.acList , Comparator.comparing(c -> c.accBalance));
+        return Collections.max(this.acList , Comparator.comparing(Account::getAccBalance));
     }
 
 

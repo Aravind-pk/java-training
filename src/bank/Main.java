@@ -36,6 +36,11 @@ public class Main {
         System.out.println(myBank.noOfCustomers);
         System.out.println(myBank.getCustomerList());
         System.out.println(myBank.getCustomersWithTotal(BigDecimal.valueOf(1000000)).size());
+        System.out.println(myBank.getCustomersWithOneOver(BigDecimal.valueOf(1000000)).size());
+
+
+
+
 
 
 
