@@ -14,7 +14,7 @@ public class Account {
     }
 
     public BigDecimal getAccBalance() {
-        return accBalance;
+        return this.accBalance;
     }
     public void addDebit(BigDecimal debit) {
         this.accBalance = this.accBalance.subtract(debit);

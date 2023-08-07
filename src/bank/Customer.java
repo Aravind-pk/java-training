@@ -45,6 +45,7 @@ public class Customer {
 
     public BigDecimal getTotalBalance(){
         return this.acList.stream().map(a -> a.accBalance).reduce(BigDecimal.valueOf(0), BigDecimal::add);
+
     }
 
     public Account getTopAccount(){
