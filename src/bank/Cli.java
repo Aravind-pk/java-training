@@ -20,12 +20,10 @@ public class Cli {
     public static void start(Bank bank){
         Scanner sc= new Scanner(System.in);
         int state = 0;
-        List<String> options = new ArrayList<>();
         System.out.println( ANSI_BLACK + ANSI_CYAN_BACKGROUND+"WELCOME ----------------\n"+ ANSI_GREEN_BACKGROUND);
 
 
         while (state != 5){
-            options.clear();
             switch (state){
                 case 0:
                     printOption(Arrays.asList("Customer ", "Bank overview" ,"Exit"));
@@ -36,25 +34,25 @@ public class Cli {
                     int cId = sc.nextInt();
                     System.out.print("\nEnter Account No: ");
                     int aId = sc.nextInt();
-                    System.out.println("Current balance is Rs: " + bank.getBalance(cId,aId));
+                    System.out.println("Current balance is Rs: "+ ANSI_YELLOW+ bank.getBalance(cId,aId)+ANSI_BLACK);
                     printOption(Arrays.asList("debit","credit" ,"Back" , "Finish"));
                     switch (sc.nextInt()){
                         case 0:
                             System.out.print("Enter amount: ");
                             bank.debit(cId,aId, BigDecimal.valueOf(sc.nextInt()));
-                            System.out.println("\n Amount debited");
+                            System.out.println(ANSI_YELLOW+"\n Amount debited"+ANSI_BLACK);
                             state = 4;
                             break;
                         case 1:
                             System.out.print("Enter amount: ");
                             bank.credit(cId,aId, BigDecimal.valueOf(sc.nextInt()));
-                            System.out.println("\n Amount credited");
+                            System.out.println(ANSI_YELLOW+"\n Amount credited"+ANSI_BLACK);
                             state = 4;
                             break;
                         case 2: state = 0;break;
                         case 3: state = 5;break;
 
-                    }
+                    }break;
                 case 2:
                     System.out.println("Get no of customers above SPECIFIED AMOUNT");
                     System.out.println("Enter the total amount");
@@ -62,8 +60,9 @@ public class Cli {
                     System.out.print("Amount: ");
                     int amount = sc.nextInt();
                     System.out.println("\n Total no of users above " + amount);
-                    System.out.println("In total balance: " + bank.getCustomersWithTotal(BigDecimal.valueOf(amount)));
-                    System.out.println("In any account: " + bank.getCustomersWithOneOver(BigDecimal.valueOf(amount)));
+                    System.out.println("In total balance: " + bank.getCustomersWithTotal(BigDecimal.valueOf(amount)).size());
+                    System.out.println("In any account: " + bank.getCustomersWithOneOver(BigDecimal.valueOf(amount)).size());
+                    state = 4;
                     break;
                 case 3:state = 5;break;
                 case 4:
